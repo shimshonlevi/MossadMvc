@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Mosad1View.ViewModel.MainView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAgents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActiveAgents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalTargets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EliminatTargets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalMissions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActiveMissions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentToTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CenAgentToTarget)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAgents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActiveAgents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalTargets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EliminatTargets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMissions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActiveMissions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentToTarget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CenAgentToTarget)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+}
+    </tbody>
+</table>
